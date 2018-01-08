@@ -1,0 +1,43 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebFormsIntro.Site" %>
+
+<%@ Register Src="~/Menu.ascx" TagPrefix="uc1" TagName="Menu" %>
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <%-- master css yukarı yazılır --%>
+    <asp:ContentPlaceHolder ID="cssContainer" runat="server">
+        <%-- rendersection css veya js --%>
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <header>
+            <h2>Baslık</h2>
+        </header>
+        <%-- Manu Partial --%>
+        <uc1:Menu runat="server" id="Menu" />
+
+    <div>
+        <%-- renderBody --%>
+        <asp:ContentPlaceHolder ID="ContentContainer" runat="server">
+        <%-- içi boş olacak --%>
+        </asp:ContentPlaceHolder>
+    </div>
+
+        <footer>
+            <p>Footer</p>
+        </footer>
+
+    </form>
+    <%-- master ait js buraya --%>
+    <asp:ContentPlaceHolder ID="jsContainer" runat="server">
+
+    </asp:ContentPlaceHolder>
+
+</body>
+</html>
